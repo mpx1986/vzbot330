@@ -26,6 +26,10 @@ cors_domains =
 [file_manager]
 enable_object_processing = True
 
+[spoolman]
+server = http://192.168.178.112:7912
+sync_rate = 5
+
 [history]
 
 [power VZBot330]
@@ -98,6 +102,14 @@ info_tags =
 type = git_repo
 path = ~/crowsnest
 origin = https://github.com/mainsail-crew/crowsnest.git
-managed_services = crowsnest
 install_script = tools/pkglist.sh
+
+[update_manager KlipperScreen]
+type = git_repo
+path = ~/KlipperScreen
+origin = https://github.com/KlipperScreen/KlipperScreen.git
+virtualenv = ~/.KlipperScreen-env
+requirements = scripts/KlipperScreen-requirements.txt
+system_dependencies = scripts/system-dependencies.json
+managed_services = KlipperScreen
 
