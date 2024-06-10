@@ -1,0 +1,253 @@
+-------------------- Log Start | Sun Jun 18 14:56:33 2023 --------------------
+data_path: /home/pi/printer_data
+is_default_data_path: False
+config_file: /home/pi/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: True
+instance_uuid: ff912b7ff9c44726a9996409745f2876
+unix_socket_path: /home/pi/printer_data/comms/moonraker.sock
+software_version: v0.8.0-268-ga23187b
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/pi/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/pi/moonraker-env/bin/python /home/pi/moonraker/moonraker/__main__.py
+msgspec_enabled: False
+uvloop_enabled: False
+2023-06-18 16:56:33,789 [confighelper.py:read_file()] - Configuration File '/home/pi/printer_data/config/moonraker.conf' parsed, total size: 2169 B
+2023-06-18 16:56:33,790 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[file_manager]
+enable_object_processing = False
+
+[authorization]
+cors_domains = 
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.lan
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+[octoprint_compat]
+
+[history]
+
+[announcements]
+subscriptions = 
+	mainsail
+
+[update_manager]
+refresh_interval = 168
+enable_auto_refresh = True
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager mainsail-config]
+type = git_repo
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+install_script = tools/install.sh
+
+#################################################################
+All Configuration Files:
+/home/pi/printer_data/config/moonraker.conf
+#################################################################
+2023-06-18 16:56:34,142 [server.py:load_component()] - Component (secrets) loaded
+2023-06-18 16:56:34,159 [server.py:load_component()] - Component (template) loaded
+2023-06-18 16:56:34,165 [server.py:load_component()] - Component (klippy_connection) loaded
+2023-06-18 16:56:36,038 [server.py:load_component()] - Component (application) loaded
+2023-06-18 16:56:36,097 [server.py:load_component()] - Component (websockets) loaded
+2023-06-18 16:56:36,410 [server.py:load_component()] - Component (dbus_manager) loaded
+2023-06-18 16:56:36,514 [server.py:add_log_rollover_item()] - 
+Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
+Unsafe Shutdown Count: 0
+2023-06-18 16:56:36,550 [server.py:load_component()] - Component (database) loaded
+2023-06-18 16:56:36,761 [file_manager.py:__init__()] - Using File System Observer: inotify
+2023-06-18 16:56:36,845 [server.py:load_component()] - Component (file_manager) loaded
+2023-06-18 16:56:36,861 [server.py:load_component()] - Component (klippy_apis) loaded
+2023-06-18 16:56:37,192 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 100000004ebb1037
+  hardware_desc: BCM2835
+  model: Raspberry Pi 4 Model B Rev 1.5
+  total_memory: 3705536
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: 03
+  manufacturer: Sandisk
+  oem_id: 5344
+  product_name: SN64G
+  product_revision: 8.5
+  serial_number: feb8fb63
+  manufacturer_date: 10/2023
+  capacity: 59.5 GiB
+  total_bytes: 63887638528
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2023-06-18 16:56:37,204 [server.py:load_component()] - Component (shell_command) loaded
+2023-06-18 16:56:37,204 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2023-06-18 16:56:37,209 [server.py:load_component()] - Component (machine) loaded
+2023-06-18 16:56:37,216 [server.py:load_component()] - Component (data_store) loaded
+2023-06-18 16:56:37,228 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
+2023-06-18 16:56:37,229 [server.py:load_component()] - Component (proc_stats) loaded
+2023-06-18 16:56:37,233 [server.py:load_component()] - Component (job_state) loaded
+2023-06-18 16:56:37,243 [server.py:load_component()] - Component (job_queue) loaded
+2023-06-18 16:56:37,292 [server.py:load_component()] - Component (http_client) loaded
+2023-06-18 16:56:37,313 [server.py:load_component()] - Component (announcements) loaded
+2023-06-18 16:56:37,326 [server.py:load_component()] - Component (webcam) loaded
+2023-06-18 16:56:37,335 [server.py:load_component()] - Component (extensions) loaded
+2023-06-18 16:56:37,490 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/pi/moonraker-env
+2023-06-18 16:56:37,497 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/pi/klippy-env
+2023-06-18 16:56:37,514 [server.py:load_component()] - Component (update_manager) loaded
+2023-06-18 16:56:37,525 [server.py:load_component()] - Component (octoprint_compat) loaded
+2023-06-18 16:56:37,543 [server.py:load_component()] - Component (history) loaded
+2023-06-18 16:56:37,626 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+https://my\.mainsail\.xyz
+http://my\.mainsail\.xyz
+http://.*\.local
+http://.*\.lan
+2023-06-18 16:56:37,630 [server.py:load_component()] - Component (authorization) loaded
+2023-06-18 16:56:37,632 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2023-06-18 16:56:37,651 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2023-06-18 16:56:37,653 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2023-06-18 16:56:37,653 [machine.py:validation_init()] - Validation version in database out of date
+2023-06-18 16:56:37,922 [machine.py:check_virt_status()] - No Virtualization Detected
+2023-06-18 16:56:37,970 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.178.148
+2023-06-18 16:56:37,973 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.178.148
+2023-06-18 16:56:38,029 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', 'network-online.target']
+**After=['sysinit.target', 'system.slice', 'basic.target', 'systemd-journald.socket', 'network-online.target', 'klipper.service']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/pi/printer_data/systemd/moonraker.env
+**ExecStart=/home/pi/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=pi
+2023-06-18 16:56:38,029 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2023-06-18 16:56:38,029 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2023-06-18 16:56:38,030 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2023-06-18 16:56:38,030 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.178.148
+2023-06-18 16:56:38,030 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2023-06-18 16:56:38,031 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2023-06-18 16:56:38,032 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2023-06-18 16:56:38,036 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2023-06-18 16:56:38,411 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2023-06-18 16:56:38,429 [iostream.py:_do_ssl_handshake()] - SSL Error on 13 ('185.199.108.153', 443): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:38,434 [update_manager.py:_handle_auto_refresh()] - update_manger: Install validation pending, bypassing initial refresh
+2023-06-18 16:56:38,435 [confighelper.py:create_backup()] - Backing up last working configuration to '/home/pi/printer_data/config/.moonraker.conf.bkp'
+2023-06-18 16:56:38,439 [machine.py:_check_service_file()] - Performing Service Validation...
+2023-06-18 16:56:38,440 [machine.py:_check_service_file()] - Service file validated and up to date
+2023-06-18 16:56:38,453 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/pi/printer_data/comms/moonraker.sock'
+2023-06-18 16:56:38,454 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: vzbot330
+2023-06-18 16:56:38,455 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2023-06-18 16:56:38,966 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:39,505 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:40,041 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:40,586 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:40,587 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:40,630 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:41,171 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:41,704 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:42,243 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:42,933 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:42,934 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:42,983 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:43,521 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:44,060 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:44,599 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:45,135 [iostream.py:_do_ssl_handshake()] - SSL Error on 14 ('2606:50c0:8003::153', 443, 0, 0): [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
+2023-06-18 16:56:45,138 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1123)
